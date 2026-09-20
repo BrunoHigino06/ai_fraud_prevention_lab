@@ -1,3 +1,7 @@
+variable "tags" {
+  type = map(string)
+}
+
 variable "lambda_function" {
   type = map(object({
     function_name          = string
@@ -7,6 +11,5 @@ variable "lambda_function" {
     publish                = bool
     filename               = string
     environment_variables  = map(string)
-    tags                   = map(string)
   }))
 }
