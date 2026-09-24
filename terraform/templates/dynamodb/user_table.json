@@ -1,0 +1,42 @@
+[
+  {
+    "user_id": { "N": "1" },
+    "user_name": { "S": "Bruno" }
+  },
+  {
+    "user_id": { "N": "2" },
+    "user_name": { "S": "Ana" }
+  },
+  {
+    "user_id": { "N": "3" },
+    "user_name": { "S": "Carlos" }
+  },
+  {
+    "user_id": { "N": "4" },
+    "user_name": { "S": "Mariana" }
+  },
+  {
+    "user_id": { "N": "5" },
+    "user_name": { "S": "Pedro" }
+  },
+  {
+    "user_id": { "N": "6" },
+    "user_name": { "S": "Juliana" }
+  },
+  {
+    "user_id": { "N": "7" },
+    "user_name": { "S": "Lucas" }
+  },
+  {
+    "user_id": { "N": "8" },
+    "user_name": { "S": "Fernanda" }
+  },
+  {
+    "user_id": { "N": "9" },
+    "user_name": { "S": "Rafael" }
+  },
+  {
+    "user_id": { "N": "10" },
+    "user_name": { "S": "Camila" }
+  }
+]

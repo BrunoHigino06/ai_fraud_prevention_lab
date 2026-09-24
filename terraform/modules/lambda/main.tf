@@ -7,7 +7,7 @@ resource aws_lambda_function "lambda_function" {
   publish          = each.value.publish  
   filename         = each.value.filename
   source_code_hash = filebase64sha256(each.value.filename)
-  tags             = var.lambda_function.tags  
+  tags             = each.value.tags 
   environment {
     variables = each.value.environment_variables
   }  

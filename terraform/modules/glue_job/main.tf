@@ -33,5 +33,5 @@ resource "aws_glue_job" "glue_job" {
     max_concurrent_runs = each.value.max_concurrent_runs
   }
 
-  tags = var.glue_job.tags
+  tags = each.value.tags
 }

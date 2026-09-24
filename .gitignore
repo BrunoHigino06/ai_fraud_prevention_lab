@@ -1,0 +1,12 @@
+# Terraform state files and backups
+*.tfstate
+*.tfstate.*
+*.terraform
+
+# Terraform installed modules, providers, and local initialization data
+.terraform/
+
+# Local environment files
+.env
+.env.*
+*.env
