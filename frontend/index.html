@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fraud Analysis</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f6fb;
+        margin: 0;
+        padding: 32px;
+      }
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      }
+      h1 {
+        margin-top: 0;
+      }
+      form {
+        display: grid;
+        gap: 16px;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        font-weight: 600;
+      }
+      input, button {
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1px solid #d8dfe9;
+        font-size: 14px;
+      }
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .result {
+        margin-top: 20px;
+        background: #eef6ff;
+        border: 1px solid #cfe0ff;
+        border-radius: 10px;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .status {
+        margin-top: 12px;
+        font-size: 13px;
+        color: #334155;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fraud Analysis</h1>
+
+      <form id="fraud-form">
+        <label>
+          Timestamp
+          <input type="text" id="timestamp" value="2026-09-24T12:00:00Z" required />
+        </label>
+
+        <label>
+          Name
+          <input type="text" id="name" value="john_doe" required />
+        </label>
+
+        <label>
+          Value
+          <input type="number" id="value" value="1500" step="0.01" required />
+        </label>
+
+        <label>
+          Location
+          <input type="text" id="location" value="New York" required />
+        </label>
+
+        <button type="submit">Analyze transaction</button>
+      </form>
+
+      <div id="status" class="status">Waiting for Lambda URL...</div>
+      <pre id="result" class="result">No analysis yet.</pre>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

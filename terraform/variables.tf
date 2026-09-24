@@ -46,7 +46,8 @@ variable "dynamodb_table" {
     range_key_type           = optional(string)
     attribute_range_key      = optional(string)
     attribute_range_key_type = optional(string)
-    
+    read_capacity            = optional(number)
+    write_capacity           = optional(number)
   }))
 }
 

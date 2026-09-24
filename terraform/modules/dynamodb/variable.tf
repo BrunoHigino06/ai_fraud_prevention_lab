@@ -6,6 +6,8 @@ variable "dynamodb_table" {
     hash_key_type            = string
     attribute_range_key      = optional(string)
     attribute_range_key_type = optional(string)
+    read_capacity            = optional(number)
+    write_capacity           = optional(number)
     tags                     = optional(map(string))
   }))
 }

@@ -12,8 +12,14 @@ module "glue_jobs" {
       number_of_workers   = glue_job.number_of_workers
       worker_type         = glue_job.worker_type
       max_concurrent_runs = glue_job.max_concurrent_runs
-      s3_bucket           = glue_job.s3_bucket
+      s3_bucket           = aws_s3_bucket.glue_bucket.bucket
       tags                = local.tags
     }
   }
+
+  depends_on = [
+    aws_s3_bucket.glue_bucket,
+    module.iam_policy,
+    module.iam_role
+  ]
 }

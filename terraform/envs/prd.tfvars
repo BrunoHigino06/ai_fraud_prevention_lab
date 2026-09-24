@@ -96,17 +96,23 @@ dynamodb_table = {
   "user_table" = {
     name          = "user_table"
     hash_key      = "user_name"
-    hash_key_type = "N"
+    hash_key_type = "S"
+    read_capacity = 1
+    write_capacity = 1
   },
   "transaction_table" = {
     name          = "transaction_table"
     hash_key      = "user_id"
     hash_key_type = "N"
+    read_capacity = 1
+    write_capacity = 1
   },
   "fraud_results_table" = {
     name          = "fraud_results_table"
     hash_key      = "result_id"
     hash_key_type = "N"
+    read_capacity = 1
+    write_capacity = 1
   }
 }
 

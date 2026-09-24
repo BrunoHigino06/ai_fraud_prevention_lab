@@ -2,9 +2,16 @@
 *.tfstate
 *.tfstate.*
 *.terraform
-
-# Terraform installed modules, providers, and local initialization data
+*.tfplan
+*.tfplan.*
 .terraform/
+.terraform.lock.hcl
+
+# Local build artifacts
+.build/
+__pycache__/
+*.pyc
+*.zip
 
 # Local environment files
 .env

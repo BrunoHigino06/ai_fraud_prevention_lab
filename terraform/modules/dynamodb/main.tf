@@ -1,8 +1,11 @@
 resource "aws_dynamodb_table" "dynamodb_table" {
-  for_each  = var.dynamodb_table
-  name      = each.value.name
-  hash_key  = each.value.hash_key
-  range_key = each.value.attribute_range_key
+  for_each      = var.dynamodb_table
+  name          = each.value.name
+  billing_mode  = "PROVISIONED"
+  hash_key      = each.value.hash_key
+  range_key     = each.value.attribute_range_key
+  read_capacity = each.value.read_capacity != null ? each.value.read_capacity : 1
+  write_capacity = each.value.write_capacity != null ? each.value.write_capacity : 1
 
   attribute {
     name = each.value.hash_key
@@ -18,5 +21,4 @@ resource "aws_dynamodb_table" "dynamodb_table" {
   }
 
   tags = each.value.tags
-
 }

@@ -8,6 +8,8 @@ module "dynamodb_tables" {
       hash_key_type            = dynamodb_table.hash_key_type
       attribute_range_key      = dynamodb_table.attribute_range_key
       attribute_range_key_type = dynamodb_table.attribute_range_key_type
+      read_capacity            = dynamodb_table.read_capacity
+      write_capacity           = dynamodb_table.write_capacity
       tags                     = local.tags
     }
   }

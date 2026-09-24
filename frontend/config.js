@@ -1,0 +1,1 @@
+window.LAMBDA_FUNCTION_URL = "";
