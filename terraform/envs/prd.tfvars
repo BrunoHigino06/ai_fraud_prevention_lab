@@ -7,7 +7,7 @@ lambda_function = {
     publish                = true
     filename               = "backend_service.zip"
     environment_variables  = {
-      GLUE_JOB_NAME = "transaction_masking_job"
+      GLUE_JOB_NAME = "transaction_normalization_job"
     }
   },
   "fraud_detection" = {
@@ -18,7 +18,8 @@ lambda_function = {
     publish                = true
     filename               = "fraud_detection.zip"
     environment_variables  = {
-      GLUE_JOB_NAME = "transaction_masking_job"
+      AGENT_ID             = "transaction_masking_job"
+      AGENT_ALIAS_ID       = ""
     }
   }
 }
@@ -38,6 +39,11 @@ iam_policy = {
     name        = "bedrockagent_agent_policy"
     description = "Policy for Bedrock Agent role"
     policy      = "bedrockagent_agent_policy.json"
+  },
+  "step_function_policy" = {
+    name        = "step_functions_policy"
+    description = "Policy for Step Function Agent role"
+    policy      = "step_function_policy.json"
   }
 }
 
@@ -53,7 +59,12 @@ iam_role = {
   "bedrockagent_agent_role" = {
     name                = "bedrockagent_agent_role"
     assume_role_policy  = "bedrockagent_agent_assume_role_policy.json"
+  },
+  "step_function_role" = {
+    name                = "step_function_role"
+    assume_role_policy  = "step_function_assume_role_policy.json"
   }
+  
 }
 
 glue_job = {
@@ -84,12 +95,12 @@ glue_job = {
 dynamodb_table = {
   "user_table" = {
     name          = "user_table"
-    hash_key      = "user_id"
+    hash_key      = "user_name"
     hash_key_type = "N"
   },
   "transaction_table" = {
     name          = "transaction_table"
-    hash_key      = "transaction_id"
+    hash_key      = "user_id"
     hash_key_type = "N"
   },
   "fraud_results_table" = {
@@ -150,12 +161,12 @@ table_itens = {
   user_table = {
     table_name = "user_table"
     file_name  = "user_table.json"
-    hash_key   = "user_id"
+    hash_key   = "user_name"
   },
   transaction_table = {
     table_name = "transaction_table"
     file_name  = "transaction_table.json"
-    hash_key   = "transaction_id"
+    hash_key   = "user_id"
   },
   fraud_results_table = {
     table_name = "fraud_results_table"
